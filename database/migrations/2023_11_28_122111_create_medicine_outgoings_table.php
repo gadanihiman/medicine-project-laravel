@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('medicine_id')->constrained()->onDelete('cascade');
             $table->foreignId('unit_id')->constrained()->onDelete('cascade');
+            // $table->unsignedBigInteger('unit_id');
+            $table->integer('batch_no');
+            $table->date('exp_date');
             $table->integer('quantity');
             $table->date('date');
             $table->timestamps();

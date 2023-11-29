@@ -19,7 +19,7 @@
 //  *
 //  */
 
-// class MedicineOutgoingController extends Controller
+// class DeprecatedMedicineOutgoingController extends Controller
 // {
 //     /**
 //      * List medicine outgoing

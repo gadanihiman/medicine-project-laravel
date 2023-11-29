@@ -4,7 +4,7 @@ namespace App\Services;
 
 class ACLService
 {
-    public function checkACL($level, $userId, $resource, $action)
+    public function checkACL($level, $userId, $resource, $action): bool
     {
         // Example implementation
         // This should be replaced with actual logic to check permissions

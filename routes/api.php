@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\ApiAuthController;
 use App\Http\Controllers\MedicineOutgoingController;
 
 /*
@@ -16,7 +17,9 @@ use App\Http\Controllers\MedicineOutgoingController;
 |
 */
 
-Route::middleware(['auth:sanctum', 'checkacl:medicine_outgoing,read'])->group(function () {
+Route::post('/login', [ApiAuthController::class, 'login']);
+
+Route::middleware(['auth:sanctum', 'checkACL:medicine_outgoing,read'])->group(function () {
     Route::get('/medicine-outgoing', [MedicineOutgoingController::class, 'index']);
     // Route::get('/medicine-outgoing/{id}', [MedicineOutgoingController::class, 'show']);
 });

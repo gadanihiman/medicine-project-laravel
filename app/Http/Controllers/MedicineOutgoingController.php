@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Database;
-use App\Models\Medicine;
-use App\Models\MedicineOutgoing;
+// use App\Database;
+// use App\Models\Medicine;
+// use App\Models\MedicineOutgoing;
 use App\Services\MedicineOutgoingService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Validator;
+// use Illuminate\Support\Facades\Validator;
 
 use DB;
 
