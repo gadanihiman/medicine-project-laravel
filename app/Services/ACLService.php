@@ -13,6 +13,7 @@ class ACLService
         // TODO: Implement real permission checking logic here
         // This could involve checking a database table that maps
         // user levels/roles to permissions for resources and actions
+        // var_dump($level, $userId, $resource, $action);
 
         return true; // Placeholder, always granting access
     }

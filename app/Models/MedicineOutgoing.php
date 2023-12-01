@@ -11,11 +11,11 @@ class MedicineOutgoing extends Model
 
     public function medicine()
     {
-        return $this->belongsTo(Medicine::class, 'id_medicine');
+        return $this->belongsTo(Medicine::class);
     }
 
     public function unit()
     {
-        return $this->belongsTo(Unit::class, 'id_unit');
+        return $this->belongsTo(Unit::class);
     }
 }

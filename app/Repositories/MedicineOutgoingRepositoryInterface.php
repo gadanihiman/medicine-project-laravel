@@ -4,5 +4,13 @@ namespace App\Repositories;
 
 interface MedicineOutgoingRepositoryInterface
 {
-    public function getMedicineOutgoings($params, $id_clinic);
+    /**
+     * Get medicine outgoings
+     *
+     * @param array $params
+     * @param int $id_clinic
+     * @param bool $withRelationships
+     * @return mixed
+     */
+    public function getMedicineOutgoings($params, $id_clinic, $withRelationships);
 }

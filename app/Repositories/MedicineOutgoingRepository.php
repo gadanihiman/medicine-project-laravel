@@ -7,11 +7,30 @@ use Illuminate\Database\Eloquent\Builder;
 
 class MedicineOutgoingRepository implements MedicineOutgoingRepositoryInterface
 {
-    public function getMedicineOutgoings($params, $id_clinic)
+    /**
+     * Get medicine outgoing by ID
+     *
+     * @param int $id
+     * @return \App\Models\MedicineOutgoing
+     */
+    public function getWithRelations()
+    {
+        return MedicineOutgoing::with(['medicine', 'unit']);
+    }
+
+    /**
+     * Get all medicine outgoings
+     *
+     * @param array $params
+     * @param int $id_clinic
+     * @param bool $withRelations
+     * @return mixed
+     */
+    public function getMedicineOutgoings($params, $id_clinic, $withRelations = false)
     {
         $query = MedicineOutgoing::query();
 
-        $query->with(['medicine', 'unit']);
+        $query = $withRelations ? $this->getWithRelations() : $query;
 
         if ($id_clinic) {
             $query->whereHas('medicine', function (Builder $q) use ($id_clinic) {
